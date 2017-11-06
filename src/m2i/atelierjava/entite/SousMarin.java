@@ -35,23 +35,23 @@ public class SousMarin extends Vehicule {
     
     public SousMarin(boolean monte, String marque, boolean utilitaire, String modele, String couleur, int nbPlaces, int x, int y, int z, int vitesse) {
         super(marque, utilitaire, modele, couleur, nbPlaces, x, y, z, vitesse);
+    }
 
-    }}
 
-//    @Override
-//    public void reculer() {
-//        super.reculer(); //To change body of generated methods, choose Tools | Templates.
-//    }
+   @Override
+    public void reculer() {
+        super.reculer(); //To change body of generated methods, choose Tools | Templates.
+    }
 
-//    @Override
-//    public void avancer() {
-//        super.avancer(); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    
+    public void avancer() {
+        super.avancer(); //To change body of generated methods, choose Tools | Templates.
+    }
 
-//    }
-//
-//    if(monte==true){
-//     y = y + pas
-//             }else{
-//    y = y - pas
+ //  if(this.monte==true){
+  //   y = y + pas;
+  //          }else{
+  //  y = y - pas;
 //}
-
+}

@@ -15,12 +15,26 @@ public class Synthe {
     protected String instrument;
     protected int volume;
 
-    public Synthe(boolean on, String instrument, int volume) {
+    public Synthe() {
+
+        this.on = false;
+        this.volume = 10;
+        this.instrument = "piano";
+    }
+
+    public void initialise(boolean on, String instrument, int volume) {
+
         this.on = on;
         this.instrument = instrument;
         this.volume = volume;
     }
 
+    public void affiche() {
+                                    //formule de concetene
+        System.out.println(this.on + " " + this.instrument+ " "+ this.volume);
+    }
+
+    
     public boolean isOn() {
         return on;
     }
@@ -54,20 +68,19 @@ public class Synthe {
             volume = 5;
 
             System.out.println("Synthe éteint.");
-            
+
         } else {
-                this.on = true;
-                System.out.println("Synthe allumé. Instrument : " + this.instrument);
-                }
+            this.on = true;
+            System.out.println("Synthe allumé. Instrument : " + this.instrument);
+        }
     }
 
     public void volumePlus() {
 
         if (volume < 10) {
             volume = volume + 1; //ou volume ++
-        }else{
-            
-        
+        } else {
+
             System.out.println("Volume max atteint");
         }
     }
@@ -76,10 +89,11 @@ public class Synthe {
 
         if (volume > 0) {
             volume = volume - 1; //ou volume --
-        }else{
-            if(this.on)
-        
-            System.out.println("Volume min atteint");
+        } else {
+            if (this.on) {
+                System.out.println("Volume min atteint");
+            }
+        }
     }
 
     public void jouerNote(String noteAJouer) {

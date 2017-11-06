@@ -24,7 +24,7 @@ public class VehiculeTest {
         a.afficher();
     }
     
-//    @Test
+    @Test
     public void testVehicule() {
 
         Vehicule vehic1 = new Vehicule("Ferrari", false, "F-50", "rouge", 2, 0, 0, 0,100);

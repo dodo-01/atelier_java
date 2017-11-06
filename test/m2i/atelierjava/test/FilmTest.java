@@ -19,27 +19,25 @@ public class FilmTest {
     public void nouveauFilm() {
 
         Film f1 = new Film();
-//        Date
-//        f1.setTitre("dracula");
-//        f1.setSynopsis("vampire");
-//        f1.setDateCreation(1981);
-//        f1.setAnneeDeProduction(1982);
+        f1.setTitre("dracula");
+        f1.setSynopsis("vampire");
+        f1.setDateCreation(new Date(1981, 01, 01));
+        f1.setAnneeDeProduction(1982);
 
-//        f1.initialise("dracula","vampire",1981,1982);
-//        f1.affiche();
+        f1.initialise("dracula", "vampire", 1981, 1982);
+        f1.affiche();
 
-//        Film f2 = new Film();
-////        f2.setTitre("kung fu panda");
-////        f2.setSynopsis("anime");
-////        f2.setDateCreation(2009);
-////        f2.setAnneeDeProduction(2010);
-//
-//        f2.initialise("kung fu panda","anime",2009,2010);
-//        f2.affiche();
+        Film f2 = new Film();
+        f2.setTitre("kung fu panda");
+        f2.setSynopsis("anime");
+        f2.setDateCreation(new Date(1981, 01, 01));
+        f2.setAnneeDeProduction(2010);
 
-//       
-//        System.out.println(f1.getTitre() + " " + f1.getAnneeDeProduction());
-//        System.out.println(f2.getTitre() + " " + f2.getAnneeDeProduction());
+        f2.initialise("kung fu panda", "anime", 2009, 2010);
+        f2.affiche();
+
+        System.out.println(f1.getTitre() + " " + f1.getAnneeDeProduction());
+        System.out.println(f2.getTitre() + " " + f2.getAnneeDeProduction());
     }
 
     Date d = new Date();

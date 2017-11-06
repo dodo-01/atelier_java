@@ -5,6 +5,13 @@
  */
 package m2i.atelierjava.test;
 
+import javax.sound.midi.Instrument;
+import javax.sound.midi.MidiChannel;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.MidiUnavailableException;
+import javax.sound.midi.Synthesizer;
+import m2i.atelierjava.entite.Synthe;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -13,14 +20,11 @@ import org.junit.Test;
  */
 public class SyntheTest {
 
-    public SyntheTest() {
-    }
-
     @Test
     public void testVolumePlusOk() {
 
-        Synthetiseur v = new Synthetiseur();
-        System.out.println(v.getVolume());
+        Synthe v = new Synthe();
+       // System.out.println(v.getVolume());
         v.volumePlus();
         v.volumePlus();
         v.volumePlus();
@@ -28,52 +32,53 @@ public class SyntheTest {
         v.volumePlus();
         v.volumePlus();
 
-        System.out.println(v.getVolume());
+        Assert.assertEquals(10, v.getVolume() );
     }
 
     @Test
     public void testAllumerOnOff() {
-        Synthetiseur s = new Synthetiseur();
-        System.out.println(s.isOn());
-        s.allumageOnOff();
-        System.out.println(s.isOn());
-        s.allumageOnOff();
-        System.out.println(s.isOn());
+       
+        Synthe v = new Synthe();                 //variable
 
-    @Test
-    public void testSynthe() {
-        testSynthe.s1 = new testSynthe();
-
-            s1.initialise("allumage", instrument, volume);
-            s1.affiche();
-        }
-
-        @Test
-
-        public void testJouerNoteOK
+        //boolean allume = v.isOn();
         
-            (){
+        Assert.assertFalse(v.isOn() );           //fonction : c'est une donnée
         
-        Synthetiseur synth = new Synthetiseur();
-
-            synth.allumageOnOff();
-            synth.jouerNote("FA#3")
-        }
-
+        v.allumageOnOff();
+    //  Assert.assertTrue(v.isOn() );
+    
+        v.allumageOnOff();      
+    //  Assert.assertFalse(v.isOn() );
+         
     }
 
-// 
-//    @Test
-//    public void testSynthe() throws MidiUnavailableException, InterruptedException {
-//
-//    Synthesizer synth = MidiSystem.getSynthesizer();
-//
-//    synth.open();
-//    MidiChannel[] channels = synth.getChannels();
-//    Instrument[] intrus = synth.getDefaultSoundbank().getInstruments();
-//    synth.loadInsttrument ( instrus[1]);
-//    channels[5].noteOn(30, 600);
-//    Thread.sleep(10000);
-//    
-//} 
+   
+    @Test
+
+    public void testJouerNoteOK() {
+
+        Synthe synth = new Synthe();
+
+        synth.allumageOnOff();
+        synth.jouerNote("FA#3");
+    }
+
+    
+    @Test
+    
+    public void b() throws MidiUnavailableException, InterruptedException {
+
+    Synthesizer synth = MidiSystem.getSynthesizer();
+
+    synth.open();
+    MidiChannel[] channels = synth.getChannels();
+    Instrument[] intrus = synth.getDefaultSoundbank().getInstruments();
+  //  synth.loadInsttrument (instrus[1]);
+    channels[5].noteOn(30, 600);
+    Thread.sleep(10000);
+}
+
+    public SyntheTest() {
+    }
+    
 }

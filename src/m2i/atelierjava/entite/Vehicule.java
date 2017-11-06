@@ -20,7 +20,7 @@ public class Vehicule {
     protected int pas;
 
     public Vehicule() {
-//        this.marque = "Ferrari";
+        this.marque = "Ferrari";
     }
 
     public Vehicule(String marque, boolean utilitaire, String modele, String couleur, int nbPlaces, int x, int y, int z, int vitesse) {
